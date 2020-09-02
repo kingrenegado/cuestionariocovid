@@ -2,6 +2,11 @@
 
 require('fpdf.php');
 
+    date_default_timezone_set('UTC');
+
+    date_default_timezone_set("America/Mexico_City");
+    
+
 require_once '../../php/conexion.php';
 session_start();
 if($_SESSION['active'] != true){
@@ -15,7 +20,7 @@ $hoy = date('Y-m-d');
 
 $query = mysqli_query($con,"SELECT respuesta.preg1,respuesta.preg2,respuesta.preg3,
                             respuesta.preg4,respuesta.preg5,respuesta.preg6,respuesta.preg7,
-                            respuesta.preg8,respuesta.preg9,respuesta.preg10,respuesta.fecha_h,
+                            respuesta.preg8,respuesta.preg9,respuesta.fecha_h,
                             musuario.nombre 
                             FROM respuesta 
                             INNER JOIN musuario on musuario.idusuario = respuesta.idusuario 
@@ -35,7 +40,6 @@ if($q > 0){
     $preg7 = $k['preg7'];
     $preg8 = $k['preg8'];
     $preg9 = $k['preg9'];
-    $preg10 = $k['preg10'];
 
     if($preg1 == 0){
         $preg1 = "No";
@@ -91,11 +95,6 @@ if($q > 0){
         $preg9 = "Si";
     }
 
-    if($preg10 == 0){
-        $preg10 = "No";
-    }elseif($preg10 == 1){
-        $preg10 = "Si";
-    }
   }
 }
 
@@ -139,8 +138,6 @@ $pdf->Cell(190,5,'',0,1);
 $pdf->Cell(0,0,"o un caso ya confirmado sin haber usado el EPP (cubrebocas y en el caso de estar a menos ",0,1,"C");
 $pdf->Cell(190,5,'',0,1);
 $pdf->Cell(0,0,"de 1.5 metros de distancia cubrebocas y careta)s: ".$preg9,0,1,"C");
-$pdf->Cell(190,10,'',0,1);
-$pdf->Cell(0,0,"Presenta síntomas	de caso sospechoso o fiebre (>=37.5°C): ".$preg10,0,1,"C");
 $pdf->Output();
 
 ?>

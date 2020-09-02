@@ -19,8 +19,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=big5">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -55,6 +55,24 @@
   </div>
 </nav>
 <br>
+<div class="col-sm-12">
+    <p>Codigo de colores:</p>
+    <p class="alert-danger"> Tiene síntomas</p>
+    <p class="alert-info"> No tiene síntomas</p>
+</div>
+<div class="col-sm-12">
+    <div class= "row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <p><small style="color:red">*</small>Los días que no aparezcan no fueron llenados</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
 <div class="col-sm-12">
    <div class="col-sm-2"></div>
    <div class="col-sm-10">

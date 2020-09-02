@@ -11,7 +11,7 @@
         $user= mysqli_real_escape_string($con,$_POST['nomusuario']);
         $clave= mysqli_real_escape_string($con,$_POST['password']);
 
-       $busqueda = mysqli_query($con,"SELECT musuario.nombre,musuario.nomusuario,carea.area,cpuesto.puesto,cusuario.tipo,musuario.correo,musuario.id_cusuario,musuario.idusuario FROM `musuario` INNER JOIN carea ON carea.id_carea= musuario.id_carea INNER JOIN cpuesto on cpuesto.id_cpuesto = musuario.id_cpuesto INNER JOIN cusuario on cusuario.id_cusuario = musuario.id_cusuario WHERE nomusuario='$user' and password='$clave' ");
+       $busqueda = mysqli_query($con,"SELECT musuario.nombre,musuario.nomusuario,carea.area,cpuesto.puesto,cusuario.tipo,musuario.id_cusuario,musuario.idusuario FROM `musuario` INNER JOIN carea ON carea.id_carea= musuario.id_carea INNER JOIN cpuesto on cpuesto.id_cpuesto = musuario.id_cpuesto INNER JOIN cusuario on cusuario.id_cusuario = musuario.id_cusuario WHERE nomusuario='$user' and password='$clave' ");
        $cont = mysqli_num_rows($busqueda);
 
        if($cont > 0){

@@ -16,9 +16,9 @@
     $urs = mysqli_num_rows($uru);
 ?>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
+    
 <table border="1">
 	<tr >
             <th>Nombre</th>
@@ -48,16 +48,16 @@ while($y = mysqli_fetch_array($uru)){
   
   if($fecha == $hoy && $respondio == 1 && $resultado == 0){
    $n = '<td class="table-info">' .$nombre.'</td>';
-   $re = '<td class="table-info">'.$respondio.'</td>';
+   $re = '<td class="table-info">'.'Si'.'</td>';
    $res = '<td class="table-info">' .$resultado.'</td>';
   }else if($fecha == $hoy and $respondio > 0 && $resultado > 0 ){
     $n = '<td class ="table-danger">'.$nombre.'</td>';
-    $re = '<td class ="table-danger">'.$respondio.'</td>';
+    $re = '<td class ="table-danger">'.'Si'.'</td>';
     $res = '<td class ="table-danger">'.$resultado.'</td>';
   }else if($fecha != $hoy){
     $n = '<td class="table-warning">'.$nombre.'</td>';
-    $re = '<td class ="table-warning">'.$respondio.'</td>';
-    $res = '<td class="table-warning">'.$resultado.'</td>';
+    $re = '<td class ="table-warning">'.'No'.'</td>';
+    $res = '<td class="table-warning">'.'0'.'</td>';
   }
 
 

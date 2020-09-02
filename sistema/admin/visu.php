@@ -73,11 +73,11 @@
                     <div class="row">
                     <div class="col-sm-6">
                         <label for="f1">Fecha 1</label>
-                        <input type="date" name="f1" id="f1">
+                        <input type="date" name="f1" id="f1" required>
                     </div>
                     <div class="col-sm-6">
                         <label for="f2">Fecha 2</label>
-                        <input type="date" name="f2" id="f2">
+                        <input type="date" name="f2" id="f2" required>
                     </div>
                     <div class="col-sm-12">
                         <p></p>
