@@ -148,7 +148,7 @@
           $re = '<td class ="table-danger">'.'Si'.'</td>';
           $res = '<td class ="table-danger">'.$resultado.'</td>';
           
-          $consul = mysqli_query($con,"SELECT preg1,preg2,preg3,preg4,preg5,preg6,preg7,preg8,preg9 FROM respuesta where resultado > 0 and idusuario = '$idusuario' ");
+          $consul = mysqli_query($con,"SELECT preg1,preg2,preg3,preg4,preg5,preg6,preg7,preg8,preg9,preg10,preg11,preg12,preg13,preg14 FROM nrespuesta where resultado > 0 and idusuario = '$idusuario' ");
           $cf = mysqli_num_rows($consul);
           if($cf > 0){
               while($ks = mysqli_fetch_array($consul)){
@@ -160,42 +160,161 @@
                 $p6 = $ks['preg6'];
                 $p7 = $ks['preg7'];
                 $p8 = $ks['preg8'];
+                $p9 = $ks['preg9'];
+                $p10 = $ks['preg10'];
+                $p11 = $ks['preg11'];
+                $p12 = $ks['preg12'];
+                $p13 = $ks['preg13'];
+                $p14 = $ks['preg14'];
               }
              
           }
          /*$alerta = '<td class="table-danger"><i class="fas fa-exclamation-circle"></i></td>';*/
          
-         if($p1 == "1" && $p2 == "1" && $p4 == "1"){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p2 == "1" && $ $p5 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p2 == "1" && $p5 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p2 == "1" && $p6 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p2 == "1" && $p7 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p2 == "1" && $p8 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p3 == "1" && $p4 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p3 == "1" && $p5 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p3 == "1" && $p6 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p1 == "1" && $p3 == "1" && $p7 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p2 == "1" && $p3 == "1" && $p4 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p2 == "1" && $p3 == "1" && $p5 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p2 == "1" && $p3 == "1" && $p6 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else if($p2 == "1" && $p3 == "1" && $p7 == "1" ){
-             $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
-         }else{
-             $alerta = '<td class="table-danger"><i class="fas fa-traffic-light"></i></td>';
-         }
+        //  if($p1 == "1" && $p2 == "1" && $p4 == "1"){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p2 == "1" && $ $p5 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p2 == "1" && $p5 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p2 == "1" && $p6 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p2 == "1" && $p7 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p2 == "1" && $p8 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p3 == "1" && $p4 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p3 == "1" && $p5 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p3 == "1" && $p6 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p1 == "1" && $p3 == "1" && $p7 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p2 == "1" && $p3 == "1" && $p4 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p2 == "1" && $p3 == "1" && $p5 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p2 == "1" && $p3 == "1" && $p6 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else if($p2 == "1" && $p3 == "1" && $p7 == "1" ){
+        //      $alerta = '<td class="table-danger"><i class="fas fa-ambulance"></i></td>';
+        //  }else{
+        //      $alerta = '<td class="table-danger"><i class="fas fa-traffic-light"></i></td>';
+        //  }
+
+        if($p1== "1" and $p2 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p3 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p4 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p3 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p4 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p4 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p5 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p6 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p7 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p8 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p9 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p10 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p11 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p12 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p13 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p14 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p5 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p6 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p7 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p8 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p9 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p10 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p11 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p12 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p13 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p14 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p5 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p6 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p7 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p8 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p9 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p10 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p11 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p12 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p13 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p3== "1" and $p14 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p5 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p6 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p7 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p8 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p9 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p10 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p11 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p12 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p13 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p4== "1" and $p14 == "1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p2 == "1" and $p3="1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p3 == "1" and $p4="1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1== "1" and $p3 == "1" and $p4="1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p2== "1" and $p3 == "1" and $p4="1") {
+            $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }else if($p1="1" and $p2== "1" and $p3 == "1" and $p4="1") {
+          $alerta = '<td class="table-danger"><i class= "fas fa-ambulance"></i></td>';
+        }
+        else {
+          $alerta = '<td class="table-danger"><i class=" fas fa-traffic-light"></i></td>';
+        }
+          
+          
+          
+          
+          
+          
           
           $inf = '<td class ="table-danger"> <center><a href="visual.php?id='.$idusuario.'" class="btn btn-danger fas fa-search" target="_blank"></a></center> </td>';
           
