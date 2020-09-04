@@ -66,7 +66,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <p><small style="color:red">*</small>Los días que no aparezcan no fueron llenados</p>
+                    <p><small style="color:red">*</small> Los días que no aparezcan no fueron llenados</p>
                 </div>
             </div>
         </div>
@@ -98,23 +98,28 @@
                 <tr>
                     <td>Fecha</td>
                     <td>Resultado</td>
+                    <td>Visualizar</td>
                 </tr>
             </thead>
             <?php
-             $consulta = mysqli_query($con,"SELECT fechah,resultado from nrespuesta where idusuario = '$idusuario' and fechah BETWEEN '$f1' and '$f2'");
+             $consulta = mysqli_query($con,"SELECT id_respuesta,fechah,resultado from nrespuesta where idusuario = '$idusuario' and fechah BETWEEN '$f1' and '$f2'");
              while($f = mysqli_fetch_array($consulta)):
+              $idrespuesta = $f['id_respuesta'];
                 if($f['resultado'] == 0){
                     $resul = '<td class="table-info">'.$f['resultado'].'</td>';
                     $fecha = '<td class="table-info">'.$f['fechah'].'</td>';
+                    $visu = '<td class="table-info"><a class="btn btn-danger fas fa-search" href="visual1.php?id='.$idrespuesta.'" target="_blank"></a></td>';
                 }elseif($f['resultado'] > 0){
                     $resul = '<td class="table-danger">'.$f['resultado'].'</td>';
                     $fecha = '<td class="table-danger">'.$f['fechah'].'</td>';
+                    $visu = '<td class="table-danger"><center><a class="btn btn-danger fas fa-search mx-auto" href="visual1.php?id='.$idrespuesta.'" target="_blank"></a></center></td>';
                 }
             ?>
             <tbody>
                 <tr>
                   <?php echo $fecha?>
                   <?php echo $resul?>
+                 <center> <?php echo $visu?> </center>
                 </tr>
             </tbody>
             <?php
