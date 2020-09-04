@@ -101,14 +101,14 @@
                 </tr>
             </thead>
             <?php
-             $consulta = mysqli_query($con,"SELECT fecha_h,resultado from respuesta where idusuario = '$idusuario' and fecha_h BETWEEN '$f1' and '$f2'");
+             $consulta = mysqli_query($con,"SELECT fechah,resultado from nrespuesta where idusuario = '$idusuario' and fechah BETWEEN '$f1' and '$f2'");
              while($f = mysqli_fetch_array($consulta)):
                 if($f['resultado'] == 0){
                     $resul = '<td class="table-info">'.$f['resultado'].'</td>';
-                    $fecha = '<td class="table-info">'.$f['fecha_h'].'</td>';
+                    $fecha = '<td class="table-info">'.$f['fechah'].'</td>';
                 }elseif($f['resultado'] > 0){
                     $resul = '<td class="table-danger">'.$f['resultado'].'</td>';
-                    $fecha = '<td class="table-danger">'.$f['fecha_h'].'</td>';
+                    $fecha = '<td class="table-danger">'.$f['fechah'].'</td>';
                 }
             ?>
             <tbody>

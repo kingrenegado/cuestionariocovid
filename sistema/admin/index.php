@@ -63,7 +63,7 @@
 <div class="col-sm-12">
    <div class="col-sm-2"></div>
    <div class="col-sm-10">
-   <p class="btn btn-info"><?php
+   <p class="btn btn-info" disabled><?php
     $hoy = date('d-m-Y');
     echo $hoy?></p>
    </div>

@@ -25,15 +25,20 @@
         <th>Respuesta 7</th>
         <th>Respuesta 8</th>
         <th>Respuesta 9</th>
+        <th>Respuesta 10</th>
+        <th>Respuesta 11</th>
+        <th>Respuesta 12</th>
+        <th>Respuesta 13</th>
+        <th>Respuesta 14</th>
         <th>Resultado</th>
         <th>Fecha</th>
     </tr>
     <?php
-        $query = mysqli_query($con,"SELECT musuario.nombre,respuesta.preg1,respuesta.preg2,respuesta.preg3,
-                                    respuesta.preg4,respuesta.preg5,respuesta.preg6,respuesta.preg7,respuesta.preg8,
-                                    respuesta.preg9,respuesta.resultado,respuesta.fecha_h
-                                    FROM respuesta
-                                    INNER JOIN musuario on musuario.idusuario = respuesta.idusuario");
+        $query = mysqli_query($con,"SELECT musuario.nombre,nrespuesta.preg1,nrespuesta.preg2,nrespuesta.preg3,
+                                    nrespuesta.preg4,nrespuesta.preg5,nrespuesta.preg6,nrespuesta.preg7,nrespuesta.preg8,
+                                    nrespuesta.preg9,nrespuesta.preg10,nrespuesta.preg11,nrespuesta.preg12,nrespuesta.preg13,nrespuesta.preg14,nrespuesta.resultado,nrespuesta.fechah
+                                    FROM nrespuesta
+                                    INNER JOIN musuario on musuario.idusuario = nrespuesta.idusuario");
         $q = mysqli_num_rows($query);
         
         if($q > 0){
@@ -48,8 +53,13 @@
                 $preg7 = $ut['preg7'];
                 $preg8 = $ut['preg8'];
                 $preg9 = $ut['preg9'];
+                $preg10 = $ut['preg10'];
+                $preg11 = $ut['preg11'];
+                $preg12 = $ut['preg12'];
+                $preg13 = $ut['preg13'];
+                $preg14 = $ut['preg14'];
                 $resultado = $ut['resultado'];
-                $fecha = $ut['fecha_h'];
+                $fecha = $ut['fechah'];
             
     ?>
         <tr>
@@ -63,6 +73,11 @@
             <td><?php echo $preg7?></td>
             <td><?php echo $preg8?></td>
             <td><?php echo $preg9?></td>
+            <td><?php echo $preg10?></td>
+            <td><?php echo $preg11?></td>
+            <td><?php echo $preg12?></td>
+            <td><?php echo $preg13?></td>
+            <td><?php echo $preg14?></td>
             <td><?php echo $resultado?></td>
             <td><?php echo $fecha?></td>
         </tr>

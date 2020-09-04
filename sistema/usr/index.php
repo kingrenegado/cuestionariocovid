@@ -65,11 +65,11 @@
 <br>
 <?php 
 
-    $hoy = date('Y-m-d');
-    $consulta = mysqli_query($con,"SELECT * from nrespuesta where idusuario = '$idusu' and fechah = '$hoy' ");
-    $cc = mysqli_num_rows($consulta);
+$hoy = date('Y-m-d');
+$consulta = mysqli_query($con,"SELECT * from musuario where idusuario = '$idusu' and fecha_h = '$hoy' ");
+$cc = mysqli_num_rows($consulta);
 
-    if($cc == 0){
+if($cc == 0){
 ?>
 <div class="row">
     <div class="col-sm-1"></div>
@@ -409,6 +409,8 @@
         </div>
    <br>
 </div>
+<p></p>
+<p></p>
 <?php
 }else{
 ?>
