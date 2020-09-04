@@ -97,7 +97,7 @@
             <thead>
                 <tr>
                     <td>Fecha</td>
-                    <td>Resultado</td>
+                    <td>Síntomas</td>
                     <td>Visualizar</td>
                 </tr>
             </thead>
