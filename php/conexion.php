@@ -1,7 +1,7 @@
 <?php
-$host= 'localhost';
-$user = 'root';
-$password= '';
+$host= '107.180.121.52';
+$user = 'adminfactual_web';
+$password= 'Tsun4m10';
 $db = 'cuestionario';
 
 $con = @mysqli_connect($host,$user,$password,$db);
