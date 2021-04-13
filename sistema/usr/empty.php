@@ -1,5 +1,5 @@
-<?php
-if(empty($_SESSION['active'])){
-    header('location: ../../');
-}
+<?php
+if(empty($_SESSION['active'])){
+    header('location: ../../');
+}
 ?>

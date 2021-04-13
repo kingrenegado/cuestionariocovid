@@ -11,16 +11,16 @@
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link fas fa-home" href="index.php">Inicio</a>
                 </li>
                 <?php 
                     if($idusu == 24 or $idusu == 49){
                 ?>
                 <li class="nav-item">
-                    <a href="reg.php" class="nav-link">Registrar Usuario</a>
+                    <a href="reg.php" class="nav-link fas fa-user-plus">Registrar Usuario</a>
                 </li>
                 <li class="nav-item">
-                    <a href="editusr.php" class="nav-link">Editar Usuario</a>
+                    <a href="editusr.php" class="nav-link fas fa-user-edit">Editar Usuario</a>
                 </li>
 
                 <?php
@@ -29,7 +29,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="<?php echo $nombre?>" disabled>
-                <a href="salir.php" class="btn btn-outline-danger"> Salir</a>
+                <a href="salir.php" class="btn btn-outline-danger fas fa-sign-out-alt"> Salir</a>
             </form>
         </div>
     </nav>

@@ -42,7 +42,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <p>Editar Usuario</p>
+                    <p class="fas fa-user-edit">Editar Usuario</p>
                 </div>
                 <div class="card-body">
                     <form action="editausr.php" method="post">
@@ -59,9 +59,12 @@
                         <input type="hidden" name="id" value="<?php echo $id?>">
                         <p></p>
                         <div class="row">
-                            <div class="col-sm-3"></div>
                             <div class="col-sm-6">
                                 <button class="btn btn-warning" style="color:white"><i class="fas fa-user-edit"></i> Editar Usuario</button>
+                                <br>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="elimusr.php?id=<?php echo $id?>" class="btn btn-danger"> <i class="fas fa-trash"></i> Eliminar Usuario</a>
                             </div>
                             <div class="col-sm-4"></div>
                         </div>

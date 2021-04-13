@@ -25,8 +25,6 @@
             header('location:sistema/admin/');
         }elseif($data['id_cusuario'] == 2){
             header('location:sistema/usr');
-        }elseif($data['id_cusuario'] == 3){
-            header('location:sistema/usr');
         }
        }else{
            $alert = "Usario y/o contraseña incorrecta: ".mysqli_error($con);
